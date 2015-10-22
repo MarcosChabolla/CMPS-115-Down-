@@ -6,12 +6,13 @@
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".Down"
     android:clickable="false"
     style="@style/AppTheme"
-    android:touchscreenBlocksFocus="true">
+    android:touchscreenBlocksFocus="true"
+    android:id="@+id/slideTwo">
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/eventName"
+        android:id="@+id/eventWhere"
         android:layout_alignParentTop="true"
         android:layout_marginTop="68dp"
         android:layout_alignParentEnd="true"
@@ -25,7 +26,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/eventDiscription"
+        android:id="@+id/eventWhen"
         android:hint="When?"
         android:textColor="@color/highlight"
         android:elegantTextHeight="false"
@@ -34,7 +35,7 @@
         android:textIsSelectable="false"
         android:lines="4"
         android:gravity="bottom"
-        android:layout_below="@+id/eventName"
+        android:layout_below="@+id/eventWhere"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
 
@@ -47,8 +48,8 @@
         android:background="@color/primary"
         android:textColor="@color/highlight"
         android:layout_marginTop="46dp"
-        android:layout_below="@+id/eventDiscription"
-        android:layout_alignEnd="@+id/eventDiscription"
+        android:layout_below="@+id/eventWhen"
+        android:layout_alignEnd="@+id/eventWhen"
         android:layout_marginEnd="71dp" />
 
 

@@ -2,6 +2,7 @@ package com.example.lou.down;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.EditText;
 
 /**
  * Created by Marcos on 10/20/2015.

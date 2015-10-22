@@ -4,34 +4,34 @@ import java.util.*;
  * Created by Lou on 10/14/2015.
  */
 public class EventClass {
-    private string eventName;
-    private string eventDiscription;
-    private string location;
+    private String eventName;
+    private String eventDiscription;
+    private String location;
     private int time;
     private int date;
 
     /*constructor sets everything to null
      *use mutators to set variables
      */
-    public EventClass({
-        eventName = NULL;
-        eventDiscription = NULL;
-        location = NULL;
-        time = NULL;
-        date = NULL;
+    public EventClass(){
+        eventName = "";
+        eventDiscription = "";
+        location = "";
+        time = 0000;
+        date = 01010000;
     }
 
 
     /*mutators*/
-    public void setName(string Name){
+    public void setName(String Name){
         eventName = Name;
     }
 
-    public void setEventDiscription(string EventDisc){
+    public void setEventDiscription(String EventDisc){
         eventDiscription = EventDisc;
     }
 
-    public void setLocation(string Location){
+    public void setLocation(String Location){
         location = Location;
     }
 
@@ -50,9 +50,9 @@ public class EventClass {
     }
 
     /*accessors*/
-    public string getName(){ return eventName; }
-    public string getDiscription(){ return eventDiscription; }
-    public string getLocation(){ return location; }
+    public String getName(){ return eventName; }
+    public String getDiscription(){ return eventDiscription; }
+    public String getLocation(){ return location; }
     public int getTime(){ return time; }
     public int getDate(){ return date; }
 

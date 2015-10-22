@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
 ////Ideal color code: #ff0fffab
 
@@ -19,14 +20,22 @@ public class MainActivity extends Activity {
 
     //Next Button Functionality
     public void nextButtonSlideOne(View v){
-            Intent a = new Intent(this, secondActivity.class );
-            startActivity(a);
-        }
+        EditText EventName = (EditText)findViewById(R.id.eventName);
+        EditText EventDisc = (EditText)findViewById(R.id.eventDiscription);
+
+        EventClass event = new EventClass();
+
+        event.setName(EventName.getText().toString());
+        event.setEventDiscription(EventDisc.getText().toString());
+
+        Intent a = new Intent(this, secondActivity.class );
+        startActivity(a);
+    }
 
     public void nextButtonSlideTwo(View v){
-            Intent b = new Intent(this, thirdActivity.class );
-            startActivity(b);
-        }
+        Intent b = new Intent(this, thirdActivity.class );
+        startActivity(b);
+    }
 
 
     @Override
