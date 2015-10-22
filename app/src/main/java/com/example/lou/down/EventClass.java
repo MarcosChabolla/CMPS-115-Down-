@@ -4,5 +4,56 @@ import java.util.*;
  * Created by Lou on 10/14/2015.
  */
 public class EventClass {
+    private string eventName;
+    private string eventDiscription;
+    private string location;
+    private int time;
+    private int date;
 
-}
+    /*constructor sets everything to null
+     *use mutators to set variables
+     */
+    public EventClass({
+        eventName = NULL;
+        eventDiscription = NULL;
+        location = NULL;
+        time = NULL;
+        date = NULL;
+    }
+
+
+    /*mutators*/
+    public void setName(string Name){
+        eventName = Name;
+    }
+
+    public void setEventDiscription(string EventDisc){
+        eventDiscription = EventDisc;
+    }
+
+    public void setLocation(string Location){
+        location = Location;
+    }
+
+    public void setTime(int Time){          //military time 0000 - 2400
+        if (Time > 2400){
+            System.out.println("Invalid time entered.");
+        }
+        time = Time;
+    }
+
+    public void setDate(int Date) {                  //MMDDYYYY (8 digit unsigned)
+        if (Date < 01010000 || Date > 12319999) {    //01010000 - 12319999
+            System.out.println("Invalid date entered.");
+        }
+        date = Date;
+    }
+
+    /*accessors*/
+    public string getName(){ return eventName; }
+    public string getDiscription(){ return eventDiscription; }
+    public string getLocation(){ return location; }
+    public int getTime(){ return time; }
+    public int getDate(){ return date; }
+
+}//EventClass
