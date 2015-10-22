@@ -18,6 +18,7 @@ public class EventClass {
         eventDiscription = NULL;
         location = NULL;
         time = NULL;
+        date = NULL;
     }
 
 
