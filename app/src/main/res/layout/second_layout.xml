@@ -16,7 +16,7 @@
         android:layout_marginTop="68dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
-        android:hint="Event Name"
+        android:hint="Where?"
         android:textColorHighlight="@color/highlight"
         android:textColor="@color/highlight"
         android:textColorHint="@color/hintColor"
@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/eventDiscription"
-        android:hint="Event Discription"
+        android:hint="When?"
         android:textColor="@color/highlight"
         android:elegantTextHeight="false"
         android:textColorHighlight="@color/highlight"
@@ -41,13 +41,26 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button2"
+        android:id="@+id/slideTwoNext"
         android:text="Next"
+        android:onClick="nextButtonSlideTwo"
+        android:background="@color/primary"
+        android:textColor="@color/highlight"
+        android:layout_marginTop="46dp"
+        android:layout_below="@+id/eventDiscription"
+        android:layout_alignEnd="@+id/eventDiscription"
+        android:layout_marginEnd="71dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Menu2_BackButton"
+        android:text="Back"
         android:onClick="buttonSlideOneNext"
         android:background="@color/primary"
         android:textColor="@color/highlight"
-        android:layout_below="@+id/eventDiscription"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="45dp" />
+        android:layout_marginEnd="39dp"
+        android:layout_alignTop="@+id/slideTwoNext"
+        android:layout_toStartOf="@+id/slideTwoNext" />
 
 </RelativeLayout>

@@ -1,22 +1,51 @@
 package com.example.lou.down;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 
-public class Down extends Activity {
+
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_down);
+        setContentView(R.layout.mainmenu_layout);
     }
 
-    public void buttonSlideOneNext(View view){
+    //Next Button Functionality
+    public void nextButtonSlideOne(View v){
+        if(v.getId() == R.id.mainNext){
+            Intent i = new Intent(MainActivity.this, secondActivity.class );
+            startActivity(i);
+        }
+    }
 
+    public void nextButtonSlideTwo(View v){
+        if(v.getId() == R.id.slideTwoNext){
+            Intent i = new Intent(this, thirdActivity.class );
+            startActivity(i);
+        }
+    }
+
+
+    //Back button functionality
+    public void backButtonSlideTwo(View v){
+        if(v.getId() == R.id.slideTwoNext){
+            Intent i = new Intent(MainActivity.this, MainActivity.class );
+            startActivity(i);
+        }
+    }
+
+    public void backButtonSlideThree(View v){
+        if(v.getId() == R.id.slideTwoNext){
+            Intent i = new Intent(this, secondActivity.class );
+            startActivity(i);
+        }
     }
 
     @Override
