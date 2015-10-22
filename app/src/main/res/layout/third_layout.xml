@@ -51,17 +51,6 @@
         android:layout_alignEnd="@+id/eventDiscription"
         android:layout_marginEnd="71dp" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/backButtonSlideThree"
-        android:text="Back"
-        android:onClick="buttonSlideThreeNext"
-        android:background="@color/primary"
-        android:textColor="@color/highlight"
-        android:layout_marginEnd="39dp"
-        android:layout_alignTop="@+id/slideTwoNext"
-        android:layout_toStartOf="@+id/slideTwoNext" />
 
 </RelativeLayout>
 

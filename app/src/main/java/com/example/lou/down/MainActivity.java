@@ -7,7 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-
+////Ideal color code: #ff0fffab
 
 public class MainActivity extends Activity {
 
@@ -19,34 +19,15 @@ public class MainActivity extends Activity {
 
     //Next Button Functionality
     public void nextButtonSlideOne(View v){
-        if(v.getId() == R.id.mainNext){
-            Intent i = new Intent(MainActivity.this, secondActivity.class );
-            startActivity(i);
+            Intent a = new Intent(this, secondActivity.class );
+            startActivity(a);
         }
-    }
 
     public void nextButtonSlideTwo(View v){
-        if(v.getId() == R.id.slideTwoNext){
-            Intent i = new Intent(this, thirdActivity.class );
-            startActivity(i);
+            Intent b = new Intent(this, thirdActivity.class );
+            startActivity(b);
         }
-    }
 
-
-    //Back button functionality
-    public void backButtonSlideTwo(View v){
-        if(v.getId() == R.id.slideTwoNext){
-            Intent i = new Intent(MainActivity.this, MainActivity.class );
-            startActivity(i);
-        }
-    }
-
-    public void backButtonSlideThree(View v){
-        if(v.getId() == R.id.slideTwoNext){
-            Intent i = new Intent(this, secondActivity.class );
-            startActivity(i);
-        }
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
