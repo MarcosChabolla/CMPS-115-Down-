@@ -47,8 +47,17 @@
         android:onClick="nextButtonSlideOne"
         android:background="@color/primary"
         android:textColor="@color/highlight"
+        android:layout_marginTop="49dp"
         android:layout_below="@+id/eventDiscription"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="45dp" />
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton"
+        android:background="@drawable/myevents"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="myEventsButton" />
 
 </RelativeLayout>

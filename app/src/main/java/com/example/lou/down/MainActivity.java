@@ -31,7 +31,11 @@ public class MainActivity extends Activity {
         Intent a = new Intent(this, secondActivity.class );
         a.putExtra("eventFromSlideOne", event);
         startActivity(a);
+    }
 
+    public void myEventsButton(View v){
+        Intent a = new Intent(this, MainActivityScreenTwo.class );
+        startActivity(a);
     }
 
     @Override
