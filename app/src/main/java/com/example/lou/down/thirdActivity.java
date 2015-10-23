@@ -26,14 +26,14 @@ public class thirdActivity extends Activity {
         Intent intent = getIntent();
         EventClass event = (EventClass) intent.getExtras().getSerializable("eventFromSlideTwo");
 
-        String accept = "", deny = "";
+
         if (EventAccept.getText().toString() == ""){
-            accept = "Down";
+            event.setAccept("Down");
         } else {
             event.setAccept(EventAccept.getText().toString());
         }
         if (EventDeny.getText().toString() == ""){
-            deny = "Nahh";
+            event.setDeny("Nahh");
         } else {
             event.setDeny(EventAccept.getText().toString());
         }

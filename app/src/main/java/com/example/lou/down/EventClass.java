@@ -17,6 +17,7 @@ public class EventClass implements Serializable {
     /*constructor sets everything to null
      *use mutators to set variables
      */
+
     public EventClass(){
         eventName           = "";
         eventDiscription    = "";
