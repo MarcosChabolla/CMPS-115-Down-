@@ -2,6 +2,10 @@ package com.example.lou.down;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.content.Intent;
+import android.widget.EditText;
+import android.widget.TimePicker;
 
 /**
  * Created by Marcos on 10/20/2015.
@@ -13,5 +17,37 @@ public class thirdActivity extends Activity {
         setContentView(R.layout.third_layout);
     }
 
+    public void sendButtonSlideThree(View v) {
+        EditText EventAccept = (EditText)findViewById(R.id.eventAccept);
+        EditText EventDeny = (EditText)findViewById(R.id.eventDeny);
+        TimePicker EventTime = (TimePicker)findViewById(R.id.timePicker);
+
+        Intent intent = getIntent();
+        EventClass event = (EventClass) intent.getExtras().getSerializable("eventFromSlideTwo");
+
+        String accept = "", deny = "";
+        if (EventAccept.getText().toString() == ""){
+            accept = "Down";
+        } else {
+            event.setAccept(EventAccept.getText().toString());
+        }
+        if (EventDeny.getText().toString() == ""){
+            deny = "Nahh";
+        } else {
+            event.setDeny(EventAccept.getText().toString());
+        }
+
+        event.setHour(EventTime.getCurrentHour());
+        event.setMinute(EventTime.getCurrentMinute());
+
+        Intent c = new Intent(this, MainActivity.class );
+        c.putExtra("eventFromSlideThree", event);
+        startActivity(c);
+    }
+
+    public void backButtonSlideThree(View v) {
+        Intent b = new Intent(this, secondActivity.class);
+        startActivity(b);
+    }
 
 }

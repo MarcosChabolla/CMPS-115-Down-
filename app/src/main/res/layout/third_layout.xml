@@ -12,30 +12,29 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/eventName"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="68dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
+        android:id="@+id/eventAccept"
         android:hint="Accept message"
         android:textColorHighlight="@color/highlight"
         android:textColor="@color/highlight"
         android:textColorHint="@color/hintColor"
-        android:textIsSelectable="false" />
+        android:textIsSelectable="false"
+        android:layout_above="@+id/eventDeny"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/eventWhen"
+        android:id="@+id/eventDeny"
         android:hint="Deny Message"
         android:textColor="@color/highlight"
         android:elegantTextHeight="false"
         android:textColorHighlight="@color/highlight"
         android:textColorHint="@color/hintColor"
         android:textIsSelectable="false"
-        android:lines="4"
+        android:lines="1"
         android:gravity="bottom"
-        android:layout_below="@+id/eventName"
+        android:layout_above="@+id/sentButton"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
 
@@ -47,10 +46,27 @@
         android:onClick="sendInvite"
         android:background="@color/primary"
         android:textColor="@color/highlight"
-        android:layout_marginTop="46dp"
-        android:layout_below="@+id/eventWhen"
-        android:layout_alignEnd="@+id/eventWhen"
-        android:layout_marginEnd="71dp" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+
+    <TimePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/timePicker"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/backButtonSlideThree"
+        android:text="Back"
+        android:onClick="backButtonSlideThree"
+        android:background="@color/primary"
+        android:textColor="@color/highlight"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
 
 
 </RelativeLayout>

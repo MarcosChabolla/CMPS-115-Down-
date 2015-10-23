@@ -1,59 +1,61 @@
 package com.example.lou.down;
+import java.io.Serializable;
 import java.util.*;
 /**
  * Created by Lou on 10/14/2015.
  */
-public class EventClass {
+public class EventClass implements Serializable {
     private String eventName;
     private String eventDiscription;
     private String location;
-    private int time;
-    private int date;
+    private int hour;
+    private int minute;
+    private int month, day, year;
+    private String accept;
+    private String deny;
 
     /*constructor sets everything to null
      *use mutators to set variables
      */
     public EventClass(){
-        eventName = "";
-        eventDiscription = "";
-        location = "";
-        time = 0000;
-        date = 01010000;
+        eventName           = "";
+        eventDiscription    = "";
+        location            = "";
+        hour                = 0;
+        minute              = 0;
+        month               = 0;
+        day                 = 0;
+        year                = 0;
+        accept              = "";
+        deny             = "";
     }
 
 
     /*mutators*/
-    public void setName(String Name){
-        eventName = Name;
-    }
+    public void setName(String Name){ eventName = Name; }
+    public void setEventDiscription(String EventDisc){ eventDiscription = EventDisc; }
+    public void setLocation(String Location){ location = Location; }
 
-    public void setEventDiscription(String EventDisc){
-        eventDiscription = EventDisc;
-    }
+    public void setHour(int Hour)       { hour = Hour; }
+    public void setMinute(int Minute)   { minute = Minute; }
 
-    public void setLocation(String Location){
-        location = Location;
-    }
+    public void setMonth(int Month)     { month = Month; }
+    public void setDay(int Day)         { day = Day; }
+    public void setYear(int Year)       { year = Year;}
 
-    public void setTime(int Time){          //military time 0000 - 2400
-        if (Time > 2400){
-            System.out.println("Invalid time entered.");
-        }
-        time = Time;
-    }
-
-    public void setDate(int Date) {                  //MMDDYYYY (8 digit unsigned)
-        if (Date < 01010000 || Date > 12319999) {    //01010000 - 12319999
-            System.out.println("Invalid date entered.");
-        }
-        date = Date;
-    }
+    public void setAccept(String Accept){ accept = Accept; }
+    public void setDeny(String Deny)    { deny = Deny; }
 
     /*accessors*/
-    public String getName(){ return eventName; }
-    public String getDiscription(){ return eventDiscription; }
-    public String getLocation(){ return location; }
-    public int getTime(){ return time; }
-    public int getDate(){ return date; }
+    public String getName()             { return eventName; }
+    public String getDiscription()      { return eventDiscription; }
+    public String getLocation()         { return location; }
+    public int getHour()                { return hour; }
+    public int getMinute()              { return minute; }
+    public int getDay()                 { return day; }
+    public int getMonth()               { return month; }
+    public int getYear()                { return year; }
+    public String getAccept()           { return accept; }
+    public String getDeny()             { return deny; }
 
 }//EventClass

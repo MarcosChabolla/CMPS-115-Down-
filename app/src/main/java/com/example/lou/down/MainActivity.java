@@ -29,14 +29,9 @@ public class MainActivity extends Activity {
         event.setEventDiscription(EventDisc.getText().toString());
 
         Intent a = new Intent(this, secondActivity.class );
+        a.putExtra("eventFromSlideOne", event);
         startActivity(a);
     }
-
-    public void nextButtonSlideTwo(View v){
-        Intent b = new Intent(this, thirdActivity.class );
-        startActivity(b);
-    }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
