@@ -27,14 +27,14 @@ public class EventClass implements Serializable {
         day                 = 0;
         year                = 0;
         accept              = "";
-        deny             = "";
+        deny                = "";
     }
 
 
     /*mutators*/
-    public void setName(String Name){ eventName = Name; }
+    public void setName(String Name)                 { eventName = Name; }
     public void setEventDiscription(String EventDisc){ eventDiscription = EventDisc; }
-    public void setLocation(String Location){ location = Location; }
+    public void setLocation(String Location)         { location = Location; }
 
     public void setHour(int Hour)       { hour = Hour; }
     public void setMinute(int Minute)   { minute = Minute; }

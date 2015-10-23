@@ -31,6 +31,7 @@ public class MainActivity extends Activity {
         Intent a = new Intent(this, secondActivity.class );
         a.putExtra("eventFromSlideOne", event);
         startActivity(a);
+
     }
 
     @Override

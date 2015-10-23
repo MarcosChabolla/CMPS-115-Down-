@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/sentButton"
         android:text="Send"
-        android:onClick="sendInvite"
+        android:onClick="sendButtonSlideThree"
         android:background="@color/primary"
         android:textColor="@color/highlight"
         android:layout_alignParentBottom="true"
