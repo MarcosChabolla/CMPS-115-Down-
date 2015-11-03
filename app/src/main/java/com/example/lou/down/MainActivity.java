@@ -7,15 +7,25 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import com.parse.Parse;
+
+import com.parse.ParseObject;
 
 ////Ideal color code: #ff0fffab
 
 public class MainActivity extends Activity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mainmenu_layout);
+
+        // Enable Local Datastore.
+        Parse.enableLocalDatastore(this);
+        Parse.initialize(this, "5jDm7NQJC0rj08gi5DyQUl9cj2hhmjfAkHnlDXmr", "MUERIYk9YMj5HoPfRDCTkVmvRLhNRnC1RHRiuufq");
+
+        ParseObject testObject = new ParseObject("TestObject");
+        testObject.put("foo", "bar");
+        testObject.saveInBackground();
     }
 
     //Next Button Functionality
