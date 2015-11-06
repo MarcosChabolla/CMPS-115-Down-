@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.widget.EditText;
 import android.widget.TimePicker;
 import android.widget.Toast;
+import com.parse.Parse;
+import com.parse.ParseObject;
 
 /**
  * Created by Marcos on 10/20/2015.
@@ -40,6 +42,22 @@ public class thirdActivity extends Activity {
 
         event.setHour(EventTime.getCurrentHour());
         event.setMinute(EventTime.getCurrentMinute());
+
+        ParseObject eventObj = new ParseObject("event");
+        eventObj.put("eventName", event.getName());
+        eventObj.put("eventDiscription", event.getDiscription());
+        eventObj.put("location", event.getLocation());
+        eventObj.put("hour", event.getHour());
+        eventObj.put("minute", event.getMinute());
+        eventObj.put("month", event.getMonth());
+        eventObj.put("day", event.getDay());
+        eventObj.put("year", event.getYear());
+        eventObj.put("accept", event.getAccept());
+        eventObj.put("deny", event.getDeny());
+
+        eventObj.saveInBackground();
+
+
 
         Intent c = new Intent(this, MainActivity.class );
         c.putExtra("eventFromSlideThree", event);

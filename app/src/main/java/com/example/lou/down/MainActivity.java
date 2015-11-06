@@ -21,11 +21,7 @@ public class MainActivity extends Activity {
 
         // Enable Local Datastore.
         Parse.enableLocalDatastore(this);
-        Parse.initialize(this, "5jDm7NQJC0rj08gi5DyQUl9cj2hhmjfAkHnlDXmr", "MUERIYk9YMj5HoPfRDCTkVmvRLhNRnC1RHRiuufq");
-
-        ParseObject testObject = new ParseObject("TestObject");
-        testObject.put("foo", "bar");
-        testObject.saveInBackground();
+        Parse.initialize(this, "2dm2ZO6deyFBrptTQSguyhVudhU8pekQ1UuWRE7G", "oFp2oCbrhg1cucYGA3rTfeI7dY5y54Elwi7quEIl");
     }
 
     //Next Button Functionality
