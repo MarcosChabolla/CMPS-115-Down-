@@ -7,15 +7,19 @@
     android:clickable="false"
     style="@style/AppTheme"
     android:touchscreenBlocksFocus="true"
-    android:id="@+id/slideZero">
+    android:id="@+id/slideZero"
+    android:background="@drawable/loginscreen">
 
     <EditText
         android:id="@+id/eventUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="username"
-        android:layout_alignParentTop="true"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:layout_marginTop="46dp"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:id="@+id/eventPassword"
@@ -23,7 +27,10 @@
         android:layout_height="wrap_content"
         android:hint="password"
         android:inputType="textPassword"
-        android:layout_alignParentBottom="true" />
+        android:layout_below="@+id/eventUsername"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="44dp"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:id="@+id/button1"
@@ -31,7 +38,8 @@
         android:layout_height="wrap_content"
         android:onClick="login_event"
         android:text="Login"
-        android:layout_alignParentRight="true"
-        />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="69dp" />
 
 </RelativeLayout>
