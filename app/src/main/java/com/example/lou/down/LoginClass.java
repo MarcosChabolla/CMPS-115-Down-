@@ -18,8 +18,6 @@ public class LoginClass extends Activity {
         super.onCreate(savedInstanceState);
         setTheme(R.style.AppTheme_NoActionBar);
         setContentView(R.layout.login_layout);
-
-        //this.getActionBar().hide();
     }
 
     public void login_event(View v) {

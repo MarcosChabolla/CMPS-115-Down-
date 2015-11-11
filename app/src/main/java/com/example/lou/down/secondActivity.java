@@ -38,8 +38,9 @@ public class secondActivity extends Activity {
     }
 
     public void backButtonSlideTwo(View v){
-        Intent a = new Intent(this, MainActivity.class);
-        startActivity(a);
+        //Intent a = new Intent(this, MainActivity.class);
+        //startActivity(a);
+        finish();
     }
 
 

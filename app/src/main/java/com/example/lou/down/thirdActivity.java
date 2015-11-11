@@ -62,16 +62,16 @@ public class thirdActivity extends Activity {
         Toast toast = Toast.makeText(getApplicationContext(),confirmation, Toast.LENGTH_LONG);
         toast.show();
 
-        //Intent c = new Intent(this, MainActivity.class );
-        //c.putExtra("eventFromSlideThree", event);
-        //startActivity(c.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+        Intent c = new Intent(this, MainActivity.class );
+        c.putExtra("eventFromSlideThree", event);
         finish();
 
     }
 
     public void backButtonSlideThree(View v) {
-        Intent b = new Intent(this, secondActivity.class);
-        startActivity(b);
+        //Intent d = new Intent(this, secondActivity.class);
+        //startActivity(d);
+        finish();
     }
 
 }
