@@ -12,8 +12,7 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".LoginClass"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Holo.NoActionBar">
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

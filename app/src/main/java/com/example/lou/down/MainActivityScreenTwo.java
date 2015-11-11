@@ -12,6 +12,7 @@ public class MainActivityScreenTwo extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.AppTheme_NoActionBar);
         setContentView(R.layout.activity_main_activity_screen_two);
 
         TabHost tabhost = (TabHost) findViewById(R.id.tabHost);
