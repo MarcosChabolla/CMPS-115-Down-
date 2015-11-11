@@ -30,7 +30,9 @@
             android:label="Down"
             android:screenOrientation="portrait">
         </activity>
-
+        <activity
+            android:name=".SignUpActivity"
+            android:screenOrientation="portrait"></activity>
 
     </application>
 

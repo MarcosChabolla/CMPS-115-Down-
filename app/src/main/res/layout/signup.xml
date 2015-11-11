@@ -7,7 +7,7 @@
     android:clickable="false"
     style="@style/AppTheme.Login"
     android:touchscreenBlocksFocus="true"
-    android:id="@+id/slideZero"
+    android:id="@+id/slideFive"
     android:background="@drawable/loginredwoods">
 
     <EditText
@@ -43,7 +43,6 @@
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="signup_event"
         android:text="Sign Me Up!"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
