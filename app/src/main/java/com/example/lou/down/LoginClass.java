@@ -16,7 +16,7 @@ public class LoginClass extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(R.style.AppTheme_NoActionBar);
+        setTheme(R.style.AppTheme_Login);
         setContentView(R.layout.login_layout);
     }
 
