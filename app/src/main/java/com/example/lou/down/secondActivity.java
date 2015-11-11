@@ -34,6 +34,7 @@ public class secondActivity extends Activity {
         Intent b = new Intent(this, thirdActivity.class );
         b.putExtra("eventFromSlideTwo", event);
         startActivity(b);
+        finish();
     }
 
     public void backButtonSlideTwo(View v){

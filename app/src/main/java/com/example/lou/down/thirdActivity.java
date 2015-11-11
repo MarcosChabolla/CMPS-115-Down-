@@ -58,14 +58,15 @@ public class thirdActivity extends Activity {
 
         eventObj.saveInBackground();
 
-
-
-        Intent c = new Intent(this, MainActivity.class );
-        c.putExtra("eventFromSlideThree", event);
-        startActivity(c);
         CharSequence confirmation = "Event Created";
         Toast toast = Toast.makeText(getApplicationContext(),confirmation, Toast.LENGTH_LONG);
         toast.show();
+
+        //Intent c = new Intent(this, MainActivity.class );
+        //c.putExtra("eventFromSlideThree", event);
+        //startActivity(c.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+        finish();
+
     }
 
     public void backButtonSlideThree(View v) {
