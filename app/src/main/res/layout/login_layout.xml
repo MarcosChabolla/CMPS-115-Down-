@@ -45,9 +45,8 @@
         android:layout_height="wrap_content"
         android:onClick="login_event"
         android:text="Login"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="69dp" />
+        android:layout_below="@+id/eventPassword1"
+        android:layout_centerHorizontal="true" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -58,15 +57,13 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="35dp" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Don&apos;t have an Account yet? Sign Up now!"
-        android:id="@+id/button"
-        android:textSize="9dp"
+        android:id="@+id/imageButton2"
+        android:background="@drawable/joinnowgraphic"
+        android:onClick="do_signup"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="do_signup" />
+        android:layout_alignStart="@+id/imageView" />
 
 </RelativeLayout>
