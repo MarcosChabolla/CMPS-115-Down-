@@ -7,7 +7,8 @@
     android:clickable="false"
     style="@style/AppTheme.NoActionBar"
     android:touchscreenBlocksFocus="true"
-    android:id="@+id/slideOne">
+    android:id="@+id/slideOne"
+    android:background="@drawable/mainscreenbg1080">
 
     <EditText
         android:layout_width="wrap_content"
@@ -54,10 +55,13 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:maxHeight="100dp"
+        android:minHeight="100dp"
         android:id="@+id/imageButton"
-        android:background="@drawable/myevents"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
+        android:background="@drawable/blankbutton"
+        android:layout_alignStart="@+id/mainNext"
         android:onClick="myEventsButton" />
 
 </RelativeLayout>
