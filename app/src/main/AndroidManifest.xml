@@ -19,14 +19,8 @@
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
-        <activity
-            android:name=".secondActivity"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
-            android:name=".thirdActivity"
-            android:screenOrientation="portrait" >
-        </activity>
+        <activity android:name=".secondActivity" />
+        <activity android:name=".thirdActivity" />
         <activity
             android:name=".MainActivityScreenTwo"
             android:label="Down"

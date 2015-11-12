@@ -21,7 +21,6 @@ public class SignUpActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setTheme(R.style.AppTheme_Login);
         setContentView(R.layout.signup);
 
         // Set up the signup form.
