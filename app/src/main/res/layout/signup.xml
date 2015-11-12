@@ -7,7 +7,7 @@
     android:clickable="false"
     style="@style/AppTheme.Login"
     android:touchscreenBlocksFocus="true"
-    android:id="@+id/slideZero"
+    android:id="@+id/slideFive"
     android:background="@drawable/loginredwoods">
 
     <EditText
@@ -43,8 +43,7 @@
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="login_event"
-        android:text="Login"
+        android:text="Sign Me Up!"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="69dp" />
@@ -58,15 +57,17 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="35dp" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
+    <EditText
+        android:id="@+id/eventPassword2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Don&apos;t have an Account yet? Sign Up now!"
-        android:id="@+id/button"
-        android:textSize="9dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="do_signup" />
+        android:inputType="textPassword"
+        android:textColorHint="#ffdedede"
+        android:textColor="#ffffffff"
+        android:backgroundTint="#ffffffff"
+        android:layout_below="@+id/eventPassword1"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/eventPassword1"
+        android:hint="password" />
 
 </RelativeLayout>
