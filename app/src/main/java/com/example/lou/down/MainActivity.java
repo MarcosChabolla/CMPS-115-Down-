@@ -20,9 +20,6 @@ import com.parse.ParseObject;
 ////Ideal color code: #ff0fffab
 
 public class MainActivity extends Activity {
-    private DrawerLayout mainDrawerLayout;
-    private ListView mainDrawerList;
-    private ArrayAdapter<String> menuAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,15 +27,6 @@ public class MainActivity extends Activity {
         setTheme(R.style.AppTheme_NoActionBar);
         setContentView(R.layout.mainmenu_layout);
 
-        mainDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        mainDrawerList = (ListView) findViewById(R.id.left_drawer);
-        addDrawerItems();
-    }
-
-    private void addDrawerItems() {
-        String[] menuArray = {"Profile", "Log Out"};
-        menuAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, menuArray);
-        mainDrawerList.setAdapter(menuAdapter);
     }
 
 
@@ -62,9 +50,13 @@ public class MainActivity extends Activity {
         startActivity(a);
     }
 
+    public void logoutButton(View v){
+        //logout code here.
+    }
+
+    @Override
     public void onBackPressed(){
         //Overrides back button.
-        mainDrawerLayout.closeDrawer(mainDrawerList);
     }
 
     @Override
