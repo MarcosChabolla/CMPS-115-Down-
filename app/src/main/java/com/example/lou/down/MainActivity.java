@@ -3,10 +3,16 @@ package com.example.lou.down;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
+
 import com.parse.Parse;
 
 import com.parse.ParseObject;
@@ -14,12 +20,27 @@ import com.parse.ParseObject;
 ////Ideal color code: #ff0fffab
 
 public class MainActivity extends Activity {
+    private DrawerLayout mainDrawerLayout;
+    private ListView mainDrawerList;
+    private ArrayAdapter<String> menuAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(R.style.AppTheme_NoActionBar);
         setContentView(R.layout.mainmenu_layout);
+
+        mainDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mainDrawerList = (ListView) findViewById(R.id.left_drawer);
+        addDrawerItems();
     }
+
+    private void addDrawerItems() {
+        String[] menuArray = {"Profile", "Log Out"};
+        menuAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, menuArray);
+        mainDrawerList.setAdapter(menuAdapter);
+    }
+
 
     //Next Button Functionality
     public void nextButtonSlideOne(View v){
@@ -43,6 +64,7 @@ public class MainActivity extends Activity {
 
     public void onBackPressed(){
         //Overrides back button.
+        mainDrawerLayout.closeDrawer(mainDrawerList);
     }
 
     @Override
