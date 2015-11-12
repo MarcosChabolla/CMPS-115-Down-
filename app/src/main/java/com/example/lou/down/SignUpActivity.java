@@ -80,9 +80,7 @@ public class SignUpActivity extends Activity {
                             // Show the error message
                             Toast.makeText(SignUpActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
                         } else {
-                            // Start an intent for the dispatch activity
-                            Intent intent = new Intent(SignUpActivity.this, LoginClass.class);
-                            startActivity(intent);
+                            finish();
                         }
                     }
                 });

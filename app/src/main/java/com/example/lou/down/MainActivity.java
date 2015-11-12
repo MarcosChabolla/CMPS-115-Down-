@@ -19,10 +19,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setTheme(R.style.AppTheme_NoActionBar);
         setContentView(R.layout.mainmenu_layout);
-
-        // Enable Local Datastore.
-        Parse.enableLocalDatastore(this);
-        Parse.initialize(this, "2dm2ZO6deyFBrptTQSguyhVudhU8pekQ1UuWRE7G", "oFp2oCbrhg1cucYGA3rTfeI7dY5y54Elwi7quEIl");
     }
 
     //Next Button Functionality
