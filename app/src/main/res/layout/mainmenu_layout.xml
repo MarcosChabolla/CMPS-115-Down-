@@ -24,7 +24,7 @@
         style="@style/AppTheme.NoActionBar"
         android:touchscreenBlocksFocus="true"
         android:id="@+id/slideOne"
-        android:background="@drawable/mainscreenbg1080">
+        android:background="@drawable/mainscreenbg360">
 
         <EditText
             android:layout_width="wrap_content"

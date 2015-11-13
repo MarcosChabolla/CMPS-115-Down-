@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import com.parse.ParseUser;
 
 import com.parse.Parse;
 
@@ -51,7 +52,8 @@ public class MainActivity extends Activity {
     }
 
     public void logoutButton(View v){
-        //logout code here.
+        ParseUser.logOut();
+        startActivity(new Intent(this, LoginClass.class));
     }
 
     @Override
