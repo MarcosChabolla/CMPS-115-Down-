@@ -53,6 +53,7 @@ public class MainActivity extends Activity {
 
     public void logoutButton(View v){
         ParseUser.logOut();
+        finish();
         startActivity(new Intent(this, LoginClass.class));
     }
 

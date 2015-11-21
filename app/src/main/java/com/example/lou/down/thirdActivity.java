@@ -9,6 +9,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 import com.parse.Parse;
 import com.parse.ParseObject;
+import com.parse.ParseUser;
 
 /**
  * Created by Marcos on 10/20/2015.
@@ -55,6 +56,7 @@ public class thirdActivity extends Activity {
         eventObj.put("year", event.getYear());
         eventObj.put("accept", event.getAccept());
         eventObj.put("deny", event.getDeny());
+        eventObj.put("owner", ParseUser.getCurrentUser().getUsername());
 
         eventObj.saveInBackground();
 
