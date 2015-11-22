@@ -5,9 +5,18 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TabHost;
+import android.widget.ListView;
+import android.view.View.OnClickListener;
 
+import com.parse.ParseQueryAdapter;
+import com.parse.ParseQuery;
+import com.parse.ParseObject;
 
 public class MainActivityScreenTwo extends Activity {
+
+    private ParseQueryAdapter<ParseObject> mainAdapter;
+    private CustomAdapter ca;
+    private ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +41,17 @@ public class MainActivityScreenTwo extends Activity {
         tabSpec.setContent(R.id.tabLocal);
         tabSpec.setIndicator("Local");
         tabhost.addTab(tabSpec);
+
+        mainAdapter = new ParseQueryAdapter<ParseObject>(this, "event");
+        mainAdapter.setTextKey("eventName");
+
+        ca = new CustomAdapter(this);
+
+        listView = (ListView) findViewById(R.id.list);
+        listView.setAdapter(ca);
+        ca.loadObjects();
+
+
     }
 
     @Override
