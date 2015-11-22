@@ -6,7 +6,7 @@
         android:id="@+id/text1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="aaa"
+        android:text=""
         android:textColor="#000000"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
@@ -16,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#000000"
-        android:text="adf"
+        android:text=""
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/text1"
         android:layout_marginTop="13dp" />
