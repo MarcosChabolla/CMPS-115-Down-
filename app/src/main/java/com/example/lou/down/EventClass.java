@@ -34,7 +34,7 @@ public class EventClass implements Serializable {
         year                = 0;
         accept              = "";
         deny                = "";
-        inviteeList         = null;
+        inviteeList         = new Vector<> (5,1);
     }
 
 

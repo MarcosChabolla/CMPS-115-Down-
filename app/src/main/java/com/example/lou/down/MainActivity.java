@@ -28,9 +28,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setTheme(R.style.AppTheme_NoActionBar);
         setContentView(R.layout.mainmenu_layout);
-
     }
-
 
     //Next Button Functionality
     public void nextButtonSlideOne(View v){
