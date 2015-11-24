@@ -17,7 +17,7 @@ public class EventClass implements Serializable {
     private int month, day, year;
     private String accept;
     private String deny;
-    private Vector<String> inviteeList;
+    private String inviteeList;
 
     /*constructor sets everything to null
      *use mutators to set variables
@@ -34,7 +34,7 @@ public class EventClass implements Serializable {
         year                = 0;
         accept              = "";
         deny                = "";
-        inviteeList         = new Vector<> (5,1);
+        inviteeList         = "";
     }
 
 
@@ -53,9 +53,7 @@ public class EventClass implements Serializable {
     public void setAccept(String Accept){ accept = Accept; }
     public void setDeny(String Deny)    { deny = Deny; }
 
-    public void setInviteeList(String List){
-        for (String retVal: List.split("\n"))
-        inviteeList.addElement(retVal); }
+    public void setInviteeList(String List){ inviteeList = List; }
 
     /*accessors*/
     public String getName()             { return eventName; }
@@ -68,5 +66,6 @@ public class EventClass implements Serializable {
     public int getYear()                { return year; }
     public String getAccept()           { return accept; }
     public String getDeny()             { return deny; }
+    public String getInviteeList()      { return inviteeList;}
 
 }//EventClass

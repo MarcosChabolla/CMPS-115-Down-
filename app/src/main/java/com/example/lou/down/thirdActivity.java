@@ -57,6 +57,10 @@ public class thirdActivity extends Activity {
         eventObj.put("accept", event.getAccept());
         eventObj.put("deny", event.getDeny());
         eventObj.put("owner", ParseUser.getCurrentUser().getUsername());
+        for (String retVal: event.getInviteeList().split("\n")) {
+            eventObj.addUnique("inviteeList", retVal);
+        }
+
 
         eventObj.saveInBackground();
 
