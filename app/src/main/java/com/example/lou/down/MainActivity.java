@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import com.parse.ParseUser;
 
+
 import com.parse.Parse;
 
 import com.parse.ParseObject;
@@ -27,19 +28,18 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setTheme(R.style.AppTheme_NoActionBar);
         setContentView(R.layout.mainmenu_layout);
-
     }
-
 
     //Next Button Functionality
     public void nextButtonSlideOne(View v){
         EditText EventName = (EditText)findViewById(R.id.eventName);
         EditText EventDisc = (EditText)findViewById(R.id.eventDiscription);
+        EditText InviteeList = (EditText)findViewById(R.id.Invitee);
 
         EventClass event = new EventClass();
-
         event.setName(EventName.getText().toString());
         event.setEventDiscription(EventDisc.getText().toString());
+        event.setInviteeList(InviteeList.getText().toString());
 
         Intent a = new Intent(this, secondActivity.class );
         a.putExtra("eventFromSlideOne", event);

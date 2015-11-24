@@ -56,6 +56,19 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true" />
 
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Invitee"
+            android:hint="Invite People"
+            android:textColorHighlight="@color/highlight"
+            android:textColor="@color/highlight"
+            android:textColorHint="@color/hintColor"
+            android:textIsSelectable="false"
+            android:layout_above="@+id/mainNext"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp" />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -64,8 +77,7 @@
             android:onClick="nextButtonSlideOne"
             android:background="@color/primary"
             android:textColor="@color/highlight"
-            android:layout_marginTop="49dp"
-            android:layout_below="@+id/eventDiscription"
+            android:layout_above="@+id/imageButton"
             android:layout_centerHorizontal="true" />
 
         <ImageButton

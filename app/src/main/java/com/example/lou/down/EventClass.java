@@ -1,6 +1,10 @@
 package com.example.lou.down;
 import java.io.Serializable;
 import java.util.*;
+import java.lang.String;
+import java.io.*;
+
+
 /**
  * Created by Lou on 10/14/2015.
  */
@@ -13,6 +17,7 @@ public class EventClass implements Serializable {
     private int month, day, year;
     private String accept;
     private String deny;
+    private Vector<String> inviteeList;
 
     /*constructor sets everything to null
      *use mutators to set variables
@@ -29,6 +34,7 @@ public class EventClass implements Serializable {
         year                = 0;
         accept              = "";
         deny                = "";
+        inviteeList         = new Vector<> (5,1);
     }
 
 
@@ -46,6 +52,10 @@ public class EventClass implements Serializable {
 
     public void setAccept(String Accept){ accept = Accept; }
     public void setDeny(String Deny)    { deny = Deny; }
+
+    public void setInviteeList(String List){
+        for (String retVal: List.split("\n"))
+        inviteeList.addElement(retVal); }
 
     /*accessors*/
     public String getName()             { return eventName; }
