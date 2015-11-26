@@ -11,16 +11,16 @@ import com.parse.ParseQueryAdapter;
 import com.parse.ParseUser;
 
 /**
- * Created by Robin on 11/22/2015.
+ * Created by Robin on 11/25/2015.
  */
 
-public class CustomAdapter extends ParseQueryAdapter<ParseObject>{
+public class InviteAdapter extends ParseQueryAdapter<ParseObject>{
 
-    public CustomAdapter(Context context) {
+    public InviteAdapter(Context context) {
         super(context, new ParseQueryAdapter.QueryFactory<ParseObject>() {
             public ParseQuery create() {
                 ParseQuery query = new ParseQuery("event");
-                query.whereEqualTo("owner", ParseUser.getCurrentUser().getUsername());
+                query.whereEqualTo("inviteeList", ParseUser.getCurrentUser().getUsername());
                 return query;
             }
         });

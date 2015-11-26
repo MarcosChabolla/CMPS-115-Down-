@@ -1,21 +1,19 @@
 package com.example.lou.down;
 
 import android.app.Activity;
+import android.app.TabActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TabHost;
 import android.widget.ListView;
-import android.view.View.OnClickListener;
-
-import com.parse.ParseQueryAdapter;
-import com.parse.ParseQuery;
-import com.parse.ParseObject;
+import android.content.Intent;
 
 public class MainActivityScreenTwo extends Activity {
 
-    private ParseQueryAdapter<ParseObject> mainAdapter;
     private CustomAdapter ca;
+    private InviteAdapter ia;
     private ListView listView;
 
     @Override
@@ -24,55 +22,26 @@ public class MainActivityScreenTwo extends Activity {
         setTheme(R.style.AppTheme_NoActionBar);
         setContentView(R.layout.activity_main_activity_screen_two);
 
-        TabHost tabhost = (TabHost) findViewById(R.id.tabHost);
-        tabhost.setup();
-
-        TabHost.TabSpec tabSpec = tabhost.newTabSpec("Sent");
-        tabSpec.setContent(R.id.tabSent);
-        tabSpec.setIndicator("SENT");
-        tabhost.addTab(tabSpec);
-
-        tabSpec = tabhost.newTabSpec("Recieved");
-        tabSpec.setContent(R.id.tabRecieved);
-        tabSpec.setIndicator("RECIEVED");
-        tabhost.addTab(tabSpec);
-
-        tabSpec = tabhost.newTabSpec("Local");
-        tabSpec.setContent(R.id.tabLocal);
-        tabSpec.setIndicator("Local");
-        tabhost.addTab(tabSpec);
-
-        mainAdapter = new ParseQueryAdapter<ParseObject>(this, "event");
-        mainAdapter.setTextKey("eventName");
-
         ca = new CustomAdapter(this);
+        ia = new InviteAdapter(this);
 
-        listView = (ListView) findViewById(R.id.list);
-        listView.setAdapter(ca);
-        ca.loadObjects();
-
-
+        listView = (ListView) findViewById(R.id.List);
+        listView.setAdapter(ia);
+        ia.loadObjects();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main_activity_screen_two, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+    public void showInvites(View v) {
+        if(listView.getAdapter() != ia) {
+            listView.setAdapter(ia);
+            ia.loadObjects();
         }
-
-        return super.onOptionsItemSelected(item);
     }
+
+    public void showSent(View v) {
+        if(listView.getAdapter() != ca) {
+            listView.setAdapter(ca);
+            ca.loadObjects();
+        }
+    }
+
 }
