@@ -13,5 +13,6 @@
     <string name="title_activity_main_activity_screen_two">MainActivityScreenTwo</string>
     <string name="title_activity_check_login">CheckLoginActivity</string>
     <string name="title_activity_recieved">RecievedActivity</string>
+    <string name="title_activity_expanded_event">ExpandedEvent</string>
 
 </resources>
