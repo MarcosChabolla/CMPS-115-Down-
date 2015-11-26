@@ -28,6 +28,13 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:onClick="showSent" />
+
+        <ImageView
+            android:layout_width="192dp"
+            android:layout_height="60dp"
+            android:id="@+id/imageView2"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
     </RelativeLayout>
 
     <ListView
