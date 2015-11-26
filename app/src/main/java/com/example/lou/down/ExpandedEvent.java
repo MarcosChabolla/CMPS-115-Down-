@@ -3,14 +3,17 @@ package com.example.lou.down;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
+import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.ParseObject;
 
-public class ExpandedEvent extends Activity {
+import java.util.List;
 
-    private TextView eventText = null;
+public class ExpandedEvent extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +38,16 @@ public class ExpandedEvent extends Activity {
                 event.getMonth() + "\\" + event.getDay() + "\\" + event.getYear() + "\n" +
                 event.getHour() + ":" + event.getMinute() + ampm + "\n" +
                 event.getDiscription());
+
+        String peopleInvited[] = event.getInviteeList().split("\\r?\\n");
+
+        ListView listView = (ListView) findViewById(R.id.InvitedList);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>
+                (this, android.R.layout.simple_list_item_1, android.R.id.text1, peopleInvited);
+
+        listView.setAdapter(adapter);
+
     }
 
     @Override

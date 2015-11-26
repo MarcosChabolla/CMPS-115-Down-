@@ -7,11 +7,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ListAdapter;
 import android.widget.TabHost;
 import android.widget.ListView;
 import android.content.Intent;
 
 import com.parse.ParseObject;
+
+import java.util.List;
 
 public class MainActivityScreenTwo extends Activity {
 
@@ -60,6 +63,14 @@ public class MainActivityScreenTwo extends Activity {
         ret.setAccept(Event.getString("accept"));
         ret.setDeny(Event.getString("deny"));
 
+        String invitedList = "";
+
+        for(int i = 0; i < Event.getList("inviteeList").size(); i++){
+            invitedList += Event.getList("inviteeList").get(i);
+            invitedList += "\n";
+        }
+
+        ret.setInviteeList(invitedList);
         listView = (ListView) findViewById(R.id.List);
         listView.setAdapter(ia);
         ia.loadObjects();
