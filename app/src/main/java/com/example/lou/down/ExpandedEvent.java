@@ -21,6 +21,7 @@ public class ExpandedEvent extends Activity {
         Intent intent = getIntent();
         EventClass event = (EventClass) intent.getExtras().getSerializable("eventPassed");
 
+        TextView eventText = (TextView)findViewById(R.id.eventTextView);
         String ampm = "";
 
         if (event.getHour() < 12){
@@ -36,5 +37,9 @@ public class ExpandedEvent extends Activity {
                 event.getDiscription());
     }
 
+    @Override
+    public void onBackPressed(){
+        finish();
+    }
 
 }
