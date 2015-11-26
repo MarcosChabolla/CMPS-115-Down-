@@ -35,18 +35,6 @@ public class MainActivityScreenTwo extends Activity {
         listView = (ListView) findViewById(R.id.List);
         listView.setAdapter(ca);
         ca.loadObjects();
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ParseObject toExpand = ca.getItem(position);
-                EventClass eventToPass = makeEventToPass(toExpand);
-
-                Intent expandEvent = new Intent(MainActivityScreenTwo.this, ExpandedEvent.class);
-                expandEvent.putExtra("eventPassed", eventToPass);
-                startActivity(expandEvent);
-            }
-        });
     }
 
     public EventClass makeEventToPass(ParseObject Event){
@@ -82,6 +70,18 @@ public class MainActivityScreenTwo extends Activity {
         if(listView.getAdapter() != ia) {
             listView.setAdapter(ia);
             ia.loadObjects();
+
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    ParseObject toExpand = ia.getItem(position);
+                    EventClass eventToPass = makeEventToPass(toExpand);
+
+                    Intent expandEvent = new Intent(MainActivityScreenTwo.this, ExpandedEvent.class);
+                    expandEvent.putExtra("eventPassed", eventToPass);
+                    startActivity(expandEvent);
+                }
+            });
         }
     }
 
@@ -89,6 +89,18 @@ public class MainActivityScreenTwo extends Activity {
         if(listView.getAdapter() != ca) {
             listView.setAdapter(ca);
             ca.loadObjects();
+
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    ParseObject toExpand = ca.getItem(position);
+                    EventClass eventToPass = makeEventToPass(toExpand);
+
+                    Intent expandEvent = new Intent(MainActivityScreenTwo.this, ExpandedEvent.class);
+                    expandEvent.putExtra("eventPassed", eventToPass);
+                    startActivity(expandEvent);
+                }
+            });
         }
     }
 
