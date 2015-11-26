@@ -74,7 +74,7 @@ public class MainActivityScreenTwo extends Activity {
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    ParseObject toExpand = ca.getItem(position);
+                    ParseObject toExpand = ia.getItem(position);
                     EventClass eventToPass = makeEventToPass(toExpand);
 
                     Intent expandEvent = new Intent(MainActivityScreenTwo.this, ExpandedEvent.class);
@@ -93,7 +93,7 @@ public class MainActivityScreenTwo extends Activity {
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    ParseObject toExpand = ca.getItem(position);
+                    ParseObject toExpand = ia.getItem(position);
                     EventClass eventToPass = makeEventToPass(toExpand);
 
                     Intent expandEvent = new Intent(MainActivityScreenTwo.this, ExpandedEvent.class);
