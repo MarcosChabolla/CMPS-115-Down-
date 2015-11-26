@@ -10,6 +10,8 @@ import com.parse.ParseQuery;
 import com.parse.ParseQueryAdapter;
 import com.parse.ParseUser;
 
+import org.w3c.dom.Text;
+
 /**
  * Created by Robin on 11/25/2015.
  */
@@ -38,6 +40,18 @@ public class InviteAdapter extends ParseQueryAdapter<ParseObject>{
 
         TextView eventDescriptionView = (TextView) v.findViewById(R.id.text2);
         eventDescriptionView.setText(object.getString("eventDiscription"));
+
+        TextView eventLocationView = (TextView) v.findViewById(R.id.text3);
+        String loc = object.getString("location");
+        if(loc.isEmpty())  loc = "unknown location";
+        eventLocationView.setText(loc);
+
+        TextView eventTimeView = (TextView) v.findViewById(R.id.text4);
+        String time = "";
+        time += "@" + object.getInt("hour") + ":" + object.getInt("minute") +
+                    " on " + object.getInt("month") + "/" + object.getInt("day") +
+                    "/" + object.getInt("year");
+        eventTimeView.setText(time);
         return v;
     }
 }
