@@ -29,7 +29,7 @@ public class MainActivityScreenTwo extends Activity {
         ca = new CustomAdapter(this);
         ia = new InviteAdapter(this);
 
-        listView = (ListView) findViewById(R.id.list);
+        listView = (ListView) findViewById(R.id.List);
         listView.setAdapter(ca);
         ca.loadObjects();
 
