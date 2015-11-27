@@ -3,6 +3,7 @@ package com.example.lou.down;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -13,10 +14,10 @@ public class ExpandedRecievedEvent extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(R.style.AppTheme_NoActionBar);
-        setContentView(R.layout.activity_expanded_event);
+        setContentView(R.layout.activity_expanded_recieved_event);
 
         Intent intent = getIntent();
-        EventClass event = (EventClass) intent.getExtras().getSerializable("eventPassed");
+        EventClass event = (EventClass) intent.getExtras().getSerializable("eventReceivedPassed");
 
         TextView eventText = (TextView)findViewById(R.id.eventTextView);
         String ampm = "";
@@ -41,6 +42,14 @@ public class ExpandedRecievedEvent extends Activity {
                 (this, android.R.layout.simple_list_item_1, android.R.id.text1, peopleInvited);
 
         listView.setAdapter(adapter);
+
+    }
+
+    public void downButton(View v){
+
+    }
+
+    public void nahButton(View v){
 
     }
 

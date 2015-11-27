@@ -7,6 +7,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.TabHost;
 import android.widget.ListView;
@@ -35,6 +37,8 @@ public class MainActivityScreenTwo extends Activity {
         listView = (ListView) findViewById(R.id.List);
         listView.setAdapter(ca);
         ca.loadObjects();
+
+        showInvites(null);
     }
 
     public EventClass makeEventToPass(ParseObject Event){
@@ -53,15 +57,18 @@ public class MainActivityScreenTwo extends Activity {
 
         String invitedList = "";
 
-        for(int i = 0; i < Event.getList("inviteeList").size(); i++){
+        for (int i = 0; i < Event.getList("inviteeList").size(); i++) {
             invitedList += Event.getList("inviteeList").get(i);
             invitedList += "\n";
         }
+
+
 
         ret.setInviteeList(invitedList);
         listView = (ListView) findViewById(R.id.List);
         listView.setAdapter(ia);
         ia.loadObjects();
+
         return ret;
     }
 
@@ -70,38 +77,38 @@ public class MainActivityScreenTwo extends Activity {
         if(listView.getAdapter() != ia) {
             listView.setAdapter(ia);
             ia.loadObjects();
-
-            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    ParseObject toExpand = ia.getItem(position);
-                    EventClass eventToPass = makeEventToPass(toExpand);
-
-                    Intent expandEvent = new Intent(MainActivityScreenTwo.this, ExpandedEvent.class);
-                    expandEvent.putExtra("eventPassed", eventToPass);
-                    startActivity(expandEvent);
-                }
-            });
         }
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ParseObject toExpand = ia.getItem(position);
+                EventClass eventToPass = makeEventToPass(toExpand);
+
+                Intent expandEvent = new Intent(MainActivityScreenTwo.this, ExpandedRecievedEvent.class);
+                expandEvent.putExtra("eventReceivedPassed", eventToPass);
+                startActivity(expandEvent);
+            }
+        });
     }
 
     public void showSent(View v) {
         if(listView.getAdapter() != ca) {
             listView.setAdapter(ca);
             ca.loadObjects();
-
-            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    ParseObject toExpand = ia.getItem(position);
-                    EventClass eventToPass = makeEventToPass(toExpand);
-
-                    Intent expandEvent = new Intent(MainActivityScreenTwo.this, ExpandedEvent.class);
-                    expandEvent.putExtra("eventPassed", eventToPass);
-                    startActivity(expandEvent);
-                }
-            });
         }
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ParseObject toExpand = ca.getItem(position);
+                EventClass eventToPass = makeEventToPass(toExpand);
+
+                Intent expandEvent = new Intent(MainActivityScreenTwo.this, ExpandedEvent.class);
+                expandEvent.putExtra("eventPassed", eventToPass);
+                startActivity(expandEvent);
+            }
+        });
     }
 
 }
