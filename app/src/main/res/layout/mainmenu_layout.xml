@@ -3,7 +3,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/mainscreenbg360">
+    android:background="@drawable/mainscreen14">
     <!-- The navigation drawer -->
     <ListView android:id="@+id/left_drawer"
         android:layout_width="200dp"
@@ -24,21 +24,21 @@
         style="@style/AppTheme.NoActionBar"
         android:touchscreenBlocksFocus="true"
         android:id="@+id/slideOne"
-        android:background="@drawable/mainscreenbg360">
+        android:background="@drawable/blank">
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/eventName"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="68dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentStart="true"
+            android:layout_marginTop="85dp"
             android:hint="Event Name"
             android:textColorHighlight="@color/highlight"
             android:textColor="@color/highlight"
             android:textColorHint="@color/hintColor"
-            android:textIsSelectable="false" />
+            android:textIsSelectable="false"
+            android:layout_below="@+id/imageButton2"
+            android:layout_alignParentStart="true"
+            android:layout_alignEnd="@+id/eventDiscription" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -66,8 +66,7 @@
             android:textColorHint="@color/hintColor"
             android:textIsSelectable="false"
             android:layout_above="@+id/mainNext"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="30dp" />
+            android:layout_centerHorizontal="true" />
 
         <Button
             android:layout_width="wrap_content"
@@ -86,21 +85,21 @@
             android:maxHeight="100dp"
             android:minHeight="100dp"
             android:id="@+id/imageButton"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
             android:background="@drawable/blankbutton"
-            android:layout_alignStart="@+id/mainNext"
-            android:onClick="myEventsButton" />
+            android:onClick="myEventsButton"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignEnd="@+id/eventDiscription" />
 
         <ImageButton
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:id="@+id/imageButton2"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
             android:background="@drawable/ic_account_circle_black_18dp"
             android:backgroundTint="#ff50928f"
-            android:onClick="logoutButton" />
+            android:onClick="logoutButton"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
 
     </RelativeLayout>
 </android.support.v4.widget.DrawerLayout>

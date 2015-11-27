@@ -44,6 +44,10 @@ public class MainActivity extends Activity {
         Intent a = new Intent(this, secondActivity.class );
         a.putExtra("eventFromSlideOne", event);
         startActivity(a);
+
+        EventName.setText("");
+        EventDisc.setText("");
+        InviteeList.setText("");
     }
 
     public void myEventsButton(View v){

@@ -12,18 +12,20 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
+        android:textColor="#ffffff"
+        android:background="@color/primary_dark"
         android:id="@+id/eventTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/InvitedList" />
 
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/InvitedList"
-        android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@+id/eventTextView"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/eventTextView" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView"
+        android:layout_above="@+id/DownButton" />
 
     <Button
         android:layout_width="wrap_content"
@@ -32,15 +34,27 @@
         android:id="@+id/DownButton"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:background="@color/primary" />
+        android:background="@color/primary"
+        android:onClick="downButton" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nah"
         android:id="@+id/NahButton"
-        android:layout_alignBottom="@+id/InvitedList"
-        android:layout_alignParentEnd="true"
-        android:background="@color/primary" />
+        android:background="@color/primary"
+        android:onClick="nahButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/InvitedList" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="\nPeople Invited:"
+        android:textColor="@color/primary_dark"
+        android:id="@+id/textView"
+        android:layout_below="@+id/eventTextView"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

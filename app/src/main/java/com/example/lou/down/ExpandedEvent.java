@@ -34,10 +34,11 @@ public class ExpandedEvent extends Activity {
             event.setHour(event.getHour() - 12);
         }
 
-        eventText.setText(event.getName() + "\t" + event.getLocation() + "\n" +
-                event.getMonth() + "\\" + event.getDay() + "\\" + event.getYear() + "\n" +
-                event.getHour() + ":" + event.getMinute() + ampm + "\n" +
-                event.getDiscription());
+        eventText.setText(" " + event.getName() + " \n " +
+                event.getLocation() + " \n " +
+                event.getMonth() + "\\" + event.getDay() + "\\" + event.getYear() + " \n " +
+                event.getHour() + ":" + event.getMinute() + " " + ampm + " \n " +
+                event.getDiscription() + " ");
 
         String peopleInvited[] = event.getInviteeList().split("\\r?\\n");
 
