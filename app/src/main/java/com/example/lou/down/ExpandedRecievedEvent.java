@@ -34,7 +34,8 @@ public class ExpandedRecievedEvent extends Activity {
             zeroSpacer += "0";
         }
 
-        eventText.setText(" " + event.getName() + event.getLocation() + " \n " +
+        eventText.setText(" " + event.getName() + " \n " +
+                event.getLocation() + " \n " +
                 event.getMonth() + "\\" + event.getDay() + "\\" + event.getYear() + " \n " +
                 event.getHour() + ":" + zeroSpacer + event.getMinute() + " " + ampm + " \n " +
                 event.getDiscription() + " ");
