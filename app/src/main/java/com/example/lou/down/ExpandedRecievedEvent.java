@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Button;
@@ -34,9 +35,11 @@ public class ExpandedRecievedEvent extends Activity {
 
         final Button downButton = (Button) findViewById(R.id.DownButton);
         final Button nahButton = (Button) findViewById(R.id.NahButton);
+        final TextView acceptedTxt = (TextView) findViewById(R.id.acceptText);
 
         downButton.setText(event.getAccept());
         nahButton.setText(event.getDeny());
+
 
 
         ParseQuery<ParseObject> query = ParseQuery.getQuery("event");
@@ -48,10 +51,12 @@ public class ExpandedRecievedEvent extends Activity {
                     if (a == null || !a.contains(ParseUser.getCurrentUser().getUsername())) {
                         downButton.setVisibility(View.VISIBLE);
                         nahButton.setVisibility(View.VISIBLE);
+                        acceptedTxt.setVisibility(View.GONE);
                     }
                 } else {
                     downButton.setVisibility(View.VISIBLE);
                     nahButton.setVisibility(View.VISIBLE);
+                    acceptedTxt.setVisibility(View.GONE);
                 }
             }
         });

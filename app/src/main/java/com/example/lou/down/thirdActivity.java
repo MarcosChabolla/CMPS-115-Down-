@@ -31,12 +31,12 @@ public class thirdActivity extends Activity {
         EventClass event = (EventClass) intent.getExtras().getSerializable("eventFromSlideTwo");
 
 
-        if (EventAccept.getText().toString() == ""){
+        if (EventAccept.getText().toString().isEmpty()){
             event.setAccept("Down");
         } else {
             event.setAccept(EventAccept.getText().toString());
         }
-        if (EventDeny.getText().toString() == ""){
+        if (EventDeny.getText().toString().isEmpty()){
             event.setDeny("Nahh");
         } else {
             event.setDeny(EventDeny.getText().toString());
