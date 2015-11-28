@@ -39,7 +39,7 @@ public class thirdActivity extends Activity {
         if (EventDeny.getText().toString() == ""){
             event.setDeny("Nahh");
         } else {
-            event.setDeny(EventAccept.getText().toString());
+            event.setDeny(EventDeny.getText().toString());
         }
 
         event.setHour(EventTime.getCurrentHour());

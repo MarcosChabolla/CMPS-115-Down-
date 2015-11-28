@@ -35,13 +35,17 @@ public class ExpandedRecievedEvent extends Activity {
         final Button downButton = (Button) findViewById(R.id.DownButton);
         final Button nahButton = (Button) findViewById(R.id.NahButton);
 
+        downButton.setText(event.getAccept());
+        nahButton.setText(event.getDeny());
+
+
         ParseQuery<ParseObject> query = ParseQuery.getQuery("event");
         query.getInBackground(event.getId(), new GetCallback<ParseObject>() {
             @Override
             public void done(ParseObject object, ParseException e) {
                 if (object != null) {
                     ArrayList<String> a = (ArrayList<String>)object.get("accepteeList");
-                    if (!a.contains(ParseUser.getCurrentUser().getUsername())) {
+                    if (a == null || !a.contains(ParseUser.getCurrentUser().getUsername())) {
                         downButton.setVisibility(View.VISIBLE);
                         nahButton.setVisibility(View.VISIBLE);
                     }
