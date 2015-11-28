@@ -1,5 +1,6 @@
 package com.example.lou.down;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
@@ -16,6 +17,7 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 import java.util.Arrays;
 import java.util.List;
@@ -28,7 +30,6 @@ public class ExpandedRecievedEvent extends Activity {
         super.onCreate(savedInstanceState);
         setTheme(R.style.AppTheme_NoActionBar);
         setContentView(R.layout.activity_expanded_recieved_event);
-
 
         Intent intent = getIntent();
         EventClass event = (EventClass) intent.getExtras().getSerializable("eventReceivedPassed");
@@ -109,7 +110,7 @@ public class ExpandedRecievedEvent extends Activity {
                 }
             }
         });
-
+        setResult(RESULT_OK, null);
         finish();
 
     };
@@ -126,18 +127,33 @@ public class ExpandedRecievedEvent extends Activity {
             public void done(ParseObject object, ParseException e) {
                 if (object != null) {
                     object.removeAll("inviteeList", Arrays.asList(ParseUser.getCurrentUser().getUsername()));
-                    object.saveInBackground();
-                    Toast.makeText(ExpandedRecievedEvent.this, "Invite Declined.", Toast.LENGTH_LONG).show();
-
+                    // Set up a progress dialog
+                    final ProgressDialog dlg = new ProgressDialog(ExpandedRecievedEvent.this);
+                    dlg.setTitle("Working.");
+                    dlg.setMessage("Completing your request.  Please wait.");
+                    dlg.show();
+                    object.saveInBackground(new SaveCallback() {
+                        @Override
+                        public void done(ParseException e) {
+                            if (e == null) {
+                                Toast.makeText(ExpandedRecievedEvent.this, "Invite Declined.", Toast.LENGTH_LONG).show();
+                            } else {
+                                Toast.makeText(ExpandedRecievedEvent.this, "There seems to be an error.", Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    });
+                    dlg.dismiss();
                 }
             }
         });
 
+        setResult(RESULT_OK, null);
         finish();
     }
 
     @Override
     public void onBackPressed(){
+        setResult(RESULT_OK, null);
         finish();
     }
 

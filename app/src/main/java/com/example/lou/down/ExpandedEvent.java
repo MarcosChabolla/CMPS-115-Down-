@@ -54,6 +54,7 @@ public class ExpandedEvent extends Activity {
 
         listView.setAdapter(adapter);
 
+        setResult(RESULT_OK, null);
     }
 
     @Override

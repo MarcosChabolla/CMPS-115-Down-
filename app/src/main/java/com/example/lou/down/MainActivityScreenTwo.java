@@ -41,6 +41,16 @@ public class MainActivityScreenTwo extends Activity {
         showInvites(null);
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode==RESULT_OK) {
+            ia = new InviteAdapter(this);
+            listView.setAdapter(ia);
+            ia.loadObjects();
+        }
+    }
+
     public EventClass makeEventToPass(ParseObject Event){
         EventClass ret = new EventClass();
 
@@ -67,10 +77,6 @@ public class MainActivityScreenTwo extends Activity {
 
 
         ret.setInviteeList(invitedList);
-        listView = (ListView) findViewById(R.id.List);
-        listView.setAdapter(ia);
-        ia.loadObjects();
-
         return ret;
     }
 
@@ -89,7 +95,7 @@ public class MainActivityScreenTwo extends Activity {
 
                 Intent expandEvent = new Intent(MainActivityScreenTwo.this, ExpandedRecievedEvent.class);
                 expandEvent.putExtra("eventReceivedPassed", eventToPass);
-                startActivity(expandEvent);
+                startActivityForResult(expandEvent,1);
             }
         });
     }
@@ -108,7 +114,7 @@ public class MainActivityScreenTwo extends Activity {
 
                 Intent expandEvent = new Intent(MainActivityScreenTwo.this, ExpandedEvent.class);
                 expandEvent.putExtra("eventPassed", eventToPass);
-                startActivity(expandEvent);
+                startActivityForResult(expandEvent,1);
             }
         });
     }
