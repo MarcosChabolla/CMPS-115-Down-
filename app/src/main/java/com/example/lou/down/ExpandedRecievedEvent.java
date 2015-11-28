@@ -7,6 +7,18 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Button;
+import android.widget.Toast;
+
+import com.parse.GetCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.ArrayList;
 
 public class ExpandedRecievedEvent extends Activity {
 
@@ -16,8 +28,29 @@ public class ExpandedRecievedEvent extends Activity {
         setTheme(R.style.AppTheme_NoActionBar);
         setContentView(R.layout.activity_expanded_recieved_event);
 
+
         Intent intent = getIntent();
         EventClass event = (EventClass) intent.getExtras().getSerializable("eventReceivedPassed");
+
+        final Button downButton = (Button) findViewById(R.id.DownButton);
+        final Button nahButton = (Button) findViewById(R.id.NahButton);
+
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("event");
+        query.getInBackground(event.getId(), new GetCallback<ParseObject>() {
+            @Override
+            public void done(ParseObject object, ParseException e) {
+                if (object != null) {
+                    ArrayList<String> a = (ArrayList<String>)object.get("accepteeList");
+                    if (!a.contains(ParseUser.getCurrentUser().getUsername())) {
+                        downButton.setVisibility(View.VISIBLE);
+                        nahButton.setVisibility(View.VISIBLE);
+                    }
+                } else {
+                    downButton.setVisibility(View.VISIBLE);
+                    nahButton.setVisibility(View.VISIBLE);
+                }
+            }
+        });
 
         TextView eventText = (TextView)findViewById(R.id.eventTextView);
         String ampm = "";
@@ -50,13 +83,48 @@ public class ExpandedRecievedEvent extends Activity {
         listView.setAdapter(adapter);
 
     }
-
     public void downButton(View v){
+        Intent intent = getIntent();
+        EventClass event = (EventClass) intent.getExtras().getSerializable("eventReceivedPassed");
 
-    }
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("event");
+
+        query.getInBackground(event.getId(), new GetCallback<ParseObject>() {
+            @Override
+            public void done(ParseObject object, ParseException e) {
+                if (object != null) {
+                    Toast.makeText(ExpandedRecievedEvent.this, "Invite Accepted.", Toast.LENGTH_LONG).show();
+
+                    object.addAllUnique("accepteeList", Arrays.asList(ParseUser.getCurrentUser().getUsername()));
+                    object.saveInBackground();
+                }
+            }
+        });
+
+        finish();
+
+    };
+
 
     public void nahButton(View v){
+        Intent intent = getIntent();
+        EventClass event = (EventClass) intent.getExtras().getSerializable("eventReceivedPassed");
 
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("event");
+
+        query.getInBackground(event.getId(), new GetCallback<ParseObject>() {
+            @Override
+            public void done(ParseObject object, ParseException e) {
+                if (object != null) {
+                    object.removeAll("inviteeList", Arrays.asList(ParseUser.getCurrentUser().getUsername()));
+                    object.saveInBackground();
+                    Toast.makeText(ExpandedRecievedEvent.this, "Invite Declined.", Toast.LENGTH_LONG).show();
+
+                }
+            }
+        });
+
+        finish();
     }
 
     @Override

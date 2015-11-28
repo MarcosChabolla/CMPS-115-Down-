@@ -46,6 +46,9 @@ public class InviteAdapter extends ParseQueryAdapter<ParseObject>{
         if(loc.isEmpty())  loc = "unknown location";
         eventLocationView.setText(loc);
 
+        TextView eventIDView = (TextView) v.findViewById(R.id.idText);
+        eventIDView.setText(object.getString("objectId"));
+
         TextView eventTimeView = (TextView) v.findViewById(R.id.text4);
         String time = "";
         time += "@" + object.getInt("hour") + ":" + object.getInt("minute") +

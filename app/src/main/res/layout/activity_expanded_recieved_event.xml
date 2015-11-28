@@ -35,7 +35,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:background="@color/primary"
-        android:onClick="downButton" />
+        android:onClick="downButton"
+        android:visibility="gone" />
 
     <Button
         android:layout_width="wrap_content"
@@ -45,7 +46,8 @@
         android:background="@color/primary"
         android:onClick="nahButton"
         android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/InvitedList" />
+        android:layout_alignEnd="@+id/InvitedList"
+        android:visibility="gone" />
 
     <TextView
         android:layout_width="wrap_content"

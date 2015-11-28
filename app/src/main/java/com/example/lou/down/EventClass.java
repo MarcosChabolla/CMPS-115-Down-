@@ -18,6 +18,7 @@ public class EventClass implements Serializable {
     private String accept;
     private String deny;
     private String inviteeList;
+    private String id;
 
     /*constructor sets everything to null
      *use mutators to set variables
@@ -34,6 +35,7 @@ public class EventClass implements Serializable {
         year                = 0;
         accept              = "";
         deny                = "";
+        id                  = "";
         inviteeList         = null;
     }
 
@@ -52,6 +54,7 @@ public class EventClass implements Serializable {
 
     public void setAccept(String Accept){ accept = Accept; }
     public void setDeny(String Deny)    { deny = Deny; }
+    public void setId(String sid)       { id = sid; }
 
     public void setInviteeList(String List){ inviteeList = List; }
 
@@ -67,5 +70,6 @@ public class EventClass implements Serializable {
     public String getAccept()           { return accept; }
     public String getDeny()             { return deny; }
     public String getInviteeList()      { return inviteeList;}
+    public String getId()               { return id; }
 
 }//EventClass

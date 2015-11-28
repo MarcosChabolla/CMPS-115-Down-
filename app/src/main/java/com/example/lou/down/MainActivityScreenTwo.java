@@ -54,6 +54,8 @@ public class MainActivityScreenTwo extends Activity {
         ret.setYear(Event.getInt("year"));
         ret.setAccept(Event.getString("accept"));
         ret.setDeny(Event.getString("deny"));
+        ret.setId(Event.getObjectId());
+
 
         String invitedList = "";
 
