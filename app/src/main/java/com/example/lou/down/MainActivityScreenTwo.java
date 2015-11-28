@@ -59,7 +59,7 @@ public class MainActivityScreenTwo extends Activity {
         ret.setLocation(Event.getString("location"));
         ret.setHour(Event.getInt("hour"));
         ret.setMinute(Event.getInt("minute"));
-        ret.setMonth(Event.getInt("month"));
+        ret.setMonth(Event.getInt("month") - 1);
         ret.setDay(Event.getInt("day"));
         ret.setYear(Event.getInt("year"));
         ret.setAccept(Event.getString("accept"));

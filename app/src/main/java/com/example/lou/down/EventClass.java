@@ -48,7 +48,7 @@ public class EventClass implements Serializable {
     public void setHour(int Hour)       { hour = Hour; }
     public void setMinute(int Minute)   { minute = Minute; }
 
-    public void setMonth(int Month)     { month = Month; }
+    public void setMonth(int Month)     { month = Month + 1; }
     public void setDay(int Day)         { day = Day; }
     public void setYear(int Year)       { year = Year;}
 
