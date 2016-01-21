@@ -1,22 +1,13 @@
 package com.example.lou.down;
 
 import android.app.Activity;
-import android.app.TabActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ListAdapter;
-import android.widget.TabHost;
 import android.widget.ListView;
 import android.content.Intent;
 
 import com.parse.ParseObject;
-
-import java.util.List;
 
 public class MainActivityScreenTwo extends Activity {
 
@@ -73,7 +64,6 @@ public class MainActivityScreenTwo extends Activity {
             invitedList += Event.getList("inviteeList").get(i);
             invitedList += "\n";
         }
-
 
 
         ret.setInviteeList(invitedList);

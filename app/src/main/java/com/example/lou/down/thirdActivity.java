@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.widget.EditText;
 import android.widget.TimePicker;
 import android.widget.Toast;
-import com.parse.Parse;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 

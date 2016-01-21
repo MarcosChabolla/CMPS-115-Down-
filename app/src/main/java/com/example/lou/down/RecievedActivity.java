@@ -5,7 +5,6 @@ import android.app.Activity;
 import android.widget.ListView;
 
 public class RecievedActivity extends Activity {
-    //private CustomAdapter ca;
     private InviteAdapter ia;
     private ListView listView;
 
